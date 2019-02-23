@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Dynamic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace DynamicService.Controllers
@@ -22,7 +18,7 @@ namespace DynamicService.Controllers
         [HttpPost, Route("executequery")]
         public IHttpActionResult ExecuteQuery([FromBody]string query)
         {
-            if (true == string.IsNullOrWhiteSpace(query))
+            if (string.IsNullOrWhiteSpace(query))
             {
                 return BadRequest();
             }
